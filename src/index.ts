@@ -46,7 +46,7 @@ const storeSubScribeMiddleWare: IMiddleware =
       const nextValueToCompare = get(nextValue, valueToCompare);
 
       if (
-        compareFunction(
+        !compareFunction(
           prevValueToCompare,
           nextValueToCompare
         )
