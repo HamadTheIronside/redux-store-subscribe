@@ -1,0 +1,32 @@
+{
+  "name": "redux-store-subscribe",
+  "version": "0.0.1",
+  "description": "A middleware that provides subscribe feature on value change.",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "tsc"
+  },
+  "devDependencies": {
+    "@types/lodash.get": "^4.4.6",
+    "@types/lodash.isequal": "^4.5.5",
+    "@types/uuid": "^8.3.3",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "lodash.isequal": "^4.5.0",
+    "uuid": "^8.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HamadTheIronside/redux-store-subscribe.git"
+  },
+  "author": "Abdolah Keshtkar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HamadTheIronside/redux-store-subscribe/issues"
+  },
+  "homepage": "https://github.com/HamadTheIronside/redux-store-subscribe#readme"
+
+}
