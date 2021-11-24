@@ -41,15 +41,19 @@ const storeSubScribeMiddleWare: IMiddleware =
 
     Object.values(registeredFunctions).forEach((func) => {
       const { callback, valueToCompare } = func;
+
+      const prevValueToCompare = get(prevValue, valueToCompare);
+      const nextValueToCompare = get(nextValue, valueToCompare);
+
       if (
         compareFunction(
-          get(prevValue, valueToCompare),
-          get(nextValue, valueToCompare)
+          prevValueToCompare,
+          nextValueToCompare
         )
       ) {
         callback({
-          prevValue,
-          nextValue,
+          prevValue: prevValueToCompare,
+          nextValue: nextValueToCompare,
         });
       }
     });
