@@ -1,6 +1,6 @@
 {
   "name": "redux-store-subscribe",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "description": "A middleware that provides subscribe feature on value change.",
   "main": "dist/index.js",
   "scripts": {
