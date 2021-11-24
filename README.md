@@ -1,6 +1,6 @@
 # Redux Store Subscribe Middleware
 
-Using the Redux Store Subscribe Middleware, we can subscribe to value changes in the store.
+Using the Redux Store Subscribe Middleware, we can subscribes to value changes in the store.
 
 ## How to install?
 
