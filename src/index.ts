@@ -12,7 +12,7 @@ const registeredFunctions: IRegisteredFunctions = {};
 
 const DEFAULT_COMPARE_ALGORITHM = lodashIsEqual;
 
-const subscribeToStore = <T>(
+const subScribeToStore = <T>(
   valueToCompare: DotNestedKeys<T>,
   callback: ICallBack
 ) => {
@@ -26,13 +26,15 @@ const subscribeToStore = <T>(
   return key;
 };
 
-const unSubscribeToStore = (id: string) => delete registeredFunctions[id];
+const unSubScribeFromStore = (id: string) => delete registeredFunctions[id];
 
-const storeSubscribeMiddleWare: IMiddleware =
-  ({ compareFunction = DEFAULT_COMPARE_ALGORITHM }) =>
+const storeSubScribeMiddleWare: IMiddleware =
+  (args) =>
   ({ getState }) =>
   (next) =>
   (action) => {
+    const { compareFunction = DEFAULT_COMPARE_ALGORITHM } = args ?? {};
+
     const prevValue = getState();
     const returnValue = next(action);
     const nextValue = getState();
@@ -56,9 +58,9 @@ const storeSubscribeMiddleWare: IMiddleware =
 
 export {
   DEFAULT_COMPARE_ALGORITHM,
-  storeSubscribeMiddleWare,
-  unSubscribeToStore,
-  subscribeToStore,
+  storeSubScribeMiddleWare,
+  unSubScribeFromStore,
+  subScribeToStore,
 };
 
 export type { DotNestedKeys };
